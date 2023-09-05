@@ -34,6 +34,11 @@ def ordena(lista):
 # Exemplo de uso:
 L1 = [1, 3, 0, 1, 4, -3, 13]
 L2= [9, 2, 11, 0, -4, 2, 11]
+
+print('L1 e L2 antes: ')
+print(L1)
+print(L2)
+
 L1_novo=[]
 L2_novo=[]
 
@@ -48,5 +53,6 @@ for i in range(len(L3)//2):
 for i in range(len(L3)//2, len(L3)):
     L2_novo.append(L3[i])
 
+print('L1 e L2 depois: ')
 print(L1_novo)
 print(L2_novo)
