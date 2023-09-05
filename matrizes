@@ -1,0 +1,45 @@
+def leitura(l, c):
+    matriz=[]
+    for i in range(l):
+        linha=[]
+        for j in range(c):
+            linha.append(int(input(f'Digite um numero para a posicao {i}{j} da matriz: ')))
+        matriz.append(linha)
+    return matriz
+
+def repetido(matr):
+    valores_lidos=set()
+    valores_repetidos=set()
+
+
+    for i in range(len(matr)):
+        for j in range(len(matr[-1])):
+            valor=matr[i][j]
+            if valor in valores_lidos:
+                valores_repetidos.add(valor)
+            else:
+                valores_lidos.add(valor)
+
+    for i in range(len(matr)):
+        for j in range(len(matr[-1])):
+            if matr[i][j] in valores_repetidos:
+                matr[i][j]=0
+
+    return matr
+
+
+def imprime(matri):
+    for linha in matri:
+        for elemento in linha:
+            print(elemento, end=" ")
+        print()
+    
+
+
+lin=int(input('Linhas: '))
+col=int(input('Colunas: '))
+mat=leitura(lin, col)
+imprime(mat)
+print('=-'*30)
+mat_nova=repetido(mat)
+imprime(mat_nova)
